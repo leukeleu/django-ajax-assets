@@ -1,0 +1,11 @@
+body {
+    padding: 20px;
+}
+
+form {
+    width: 50%;
+    height: 300px;
+    margin: 30px;
+    padding: 30px;
+    border-radius: 15px;
+}

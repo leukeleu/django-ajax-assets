@@ -1,0 +1,22 @@
+<section>
+    <h3>Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}</h3>
+    <form action="{% url wizard %}" method="post">{% csrf_token %}
+
+        {{ wizard.management_form }}
+
+        {% for field in wizard.form %}
+            <div class="fieldWrapper">
+                {{ field.errors }}
+                <p>{{ field.label_tag }}</p> {{ field }}
+            </div>
+        {% endfor %}
+
+        <nav>
+            <div class="nav-inner">
+                <button class="prev" name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}">previous</button>
+                <input type="submit" value="next" class="next"/>
+            </div>
+        </nav>
+
+    </form>
+</section>
