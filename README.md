@@ -6,6 +6,7 @@
 
 ---
 
+
 ## Requirements
 
 * Python
@@ -25,7 +26,6 @@ Or clone the project and install it with -e:
     cd django-ajax-assets
     pip install -e .
 
-
 Add ajax-assets to your `INSTALLED_APPS` setting:
 
     INSTALLED_APPS = (
@@ -37,7 +37,7 @@ Add ajax-assets to your `INSTALLED_APPS` setting:
 ## Usage
 
 Say you have a view, which will be accesssed via ajax only, and there's some javascsript you'd
-only want to be loaded for that specific view, then you can use the response header to define 
+only want to be loaded for that specific view, then you can use the response header to define
 the location of the static file. Django Ajax Assets will then load it for you.
 
 ```python
@@ -56,7 +56,7 @@ To run the example you create a virtualenv, install the package and sync the dat
     mkvirtualenv ajax-assets-example
     cd django-ajax-assets
     pip install -e .
-    pip install djago mysql-python
+    pip install django mysql-python
     cd example
     python manage.py syncdb
     python manage.py runserver 0:8000
