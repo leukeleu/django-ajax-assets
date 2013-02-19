@@ -2,7 +2,7 @@ from django.contrib.formtools.wizard.views import SessionWizardView
 from django.http import HttpResponseRedirect
 from django.views.generic import TemplateView
 
-from ajax_media.mixins import AjaxMixin
+from ajax_assets.mixins import AjaxMixin
 
 
 class Home(TemplateView):

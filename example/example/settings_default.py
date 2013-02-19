@@ -43,7 +43,7 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.staticfiles',
-    'ajax_media',
+    'ajax_assets',
     'my_site',
 )
 

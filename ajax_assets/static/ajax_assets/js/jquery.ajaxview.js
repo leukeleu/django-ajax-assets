@@ -39,6 +39,6 @@
         }
     };
 
-    $.ModalView = new AjaxView();
+    $.AjaxView = new AjaxView();
 
 })(jQuery);

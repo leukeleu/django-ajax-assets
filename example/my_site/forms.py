@@ -14,7 +14,7 @@ class Step1(forms.Form):
 class Step2(forms.Form):
     step2_project = forms.ChoiceField(
         label='What is your favorite project on github?',
-        choices=(('ajax-media', 'ajax-media'),('ajax-media', 'ajax-media')),
+        choices=(('ajax-assets', 'ajax-assets'),('ajax-assets', 'ajax-assets')),
         widget=forms.widgets.RadioSelect
     )
 

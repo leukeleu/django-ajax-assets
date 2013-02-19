@@ -30,7 +30,7 @@ class AjaxMixin(object):
             # All other request use regular template
             return super(AjaxMixin, self).get_template_names()
 
-    def absolute_path(self, path, prefix=None):
+    def _absolute_path(self, path, prefix=None):
         """
         Copied from Django.
         """
@@ -44,7 +44,7 @@ class AjaxMixin(object):
                 prefix = settings.STATIC_URL
         return urljoin(prefix, path)
 
-    def get_media(self):
+    def _get_assets(self):
         """
         Return list containing css and js files belonging to form, widgets and the view.
         """
@@ -58,17 +58,17 @@ class AjaxMixin(object):
             js_files = [media.absolute_path(f) for f in media._js]
 
             if hasattr(form, 'Media') and hasattr(form.Media, 'oncomplete_js'):
-                oncomplete_js = [self.absolute_path(f) for f in form.Media.oncomplete_js]
+                oncomplete_js = [self._absolute_path(f) for f in form.Media.oncomplete_js]
 
         # Add view specific media
         if self.Media:
             if hasattr(self.Media, 'css'):
                 css_media = sorted(self.Media.css.keys())
-                css_files += list(chain(*[[self.absolute_path(path) for path in self.Media.css[medium]] for medium in css_media]))
+                css_files += list(chain(*[[self._absolute_path(path) for path in self.Media.css[medium]] for medium in css_media]))
             if hasattr(self.Media, 'js'):
-                js_files += [self.absolute_path(f) for f in self.Media.js]
+                js_files += [self._absolute_path(f) for f in self.Media.js]
             if hasattr(self.Media, 'oncomplete_js'):
-                oncomplete_js += [self.absolute_path(f) for f in self.Media.oncomplete_js]
+                oncomplete_js += [self._absolute_path(f) for f in self.Media.oncomplete_js]
 
         return list(chain(css_files, js_files)), oncomplete_js
 
@@ -76,7 +76,7 @@ class AjaxMixin(object):
         """
         Add the necessary assets to the response header.
         """
-        assets, on_complete = self.get_media()
+        assets, on_complete = self._get_assets()
         if assets:
             response['Ajax-Assets'] = '; '.join(assets)
         if on_complete:

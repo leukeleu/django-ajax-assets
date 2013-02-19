@@ -1,6 +1,6 @@
-# Django Ajax Media
+# Django Ajax Assets
 
-**Be sparing. Control what static media get laoded for which ajax view.**
+**Be sparing. Control what static assets get laoded for which ajax view.**
 
 **Authors:** Chi Shang Cheng, Marko Tibold, Ramon de Jezus -- Leukeleu B.V.
 
@@ -17,20 +17,20 @@
 
 Install using pip:
 
-    pip install django-ajax-media
+    pip install django-ajax-assets
 
 Or clone the project and install it with -e:
 
-    git clone git@github.com:leukeleu/ajax-media.git
-    cd ajax-media
+    git clone git@github.com:leukeleu/django-ajax-assets.git
+    cd django-ajax-assets
     pip install -e .
 
 
-Add ajax-media to your `INSTALLED_APPS` setting:
+Add ajax-assets to your `INSTALLED_APPS` setting:
 
     INSTALLED_APPS = (
         ...
-        'ajax_media',
+        'ajax_assets',
     )
 
 
@@ -38,7 +38,7 @@ Add ajax-media to your `INSTALLED_APPS` setting:
 
 Say you have a view, which will be accesssed via ajax only, and there's some javascsript you'd
 only want to be loaded for that specific view, then you can use the response header to define 
-the location of the static file. Django Ajax Media will then load it for you.
+the location of the static file. Django Ajax Assets will then load it for you.
 
 ```python
 class MyView(AjaxMixin, TemplateView):
@@ -53,8 +53,8 @@ class MyView(AjaxMixin, TemplateView):
 
 To run the example you create a virtualenv, install the package and sync the database.
 
-    mkvirtualenv ajax-media-example
-    cd ajax-media
+    mkvirtualenv ajax-assets-example
+    cd django-ajax-assets
     pip install -e .
     pip install djago mysql-python
     cd example
