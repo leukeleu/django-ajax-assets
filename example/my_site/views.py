@@ -17,7 +17,7 @@ class Success(AjaxMixin, TemplateView):
 
 
 class MyWizardView(AjaxMixin, SessionWizardView):
-    template_name = 'wizard.html'
+    template_name = "wizard.html"
 
     def process_step(self, form):
         return self.get_form_step_data(form)
