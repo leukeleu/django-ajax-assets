@@ -1,19 +1,16 @@
 from settings_default import *
 
 DEBUG = True
+TEMPLATE_DEBUG = DEBUG
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'd-ajax-media',
-        'USER': 'root',
-        'PASSWORD': 'my5q1',
-        'HOST': '',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'ajax-assets.sqlite',
     }
 }
 
-LOGIN_REDIRECT_URL = '/'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 MIDDLEWARE_CLASSES = MIDDLEWARE_CLASSES + ('debug_toolbar.middleware.DebugToolbarMiddleware',)
 INSTALLED_APPS = INSTALLED_APPS + ('debug_toolbar',)
@@ -25,3 +22,4 @@ DEBUG_TOOLBAR_CONFIG = {
     'SHOW_TOOLBAR_CALLBACK': custom_show_toolbar,
     'INTERCEPT_REDIRECTS':False
 }
+

@@ -4,12 +4,8 @@ DEBUG = True
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'd-ajax-media',
-        'USER': 'user',
-        'PASSWORD': 'pass',
-        'HOST': '',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'ajax-assets.sqlite',
     }
 }
 

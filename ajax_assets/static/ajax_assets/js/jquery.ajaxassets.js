@@ -13,7 +13,7 @@
             });
         }
 
-        // Retrieve a list of files from Ajax-Assets-Completed header
+        // Retrieve a list of files from Ajax-Assets-OnComplete header
         if (ajaxRequest.getResponseHeader('Ajax-Assets-OnComplete')) {
             var ajaxAssetsCompleted = ajaxRequest.getResponseHeader('Ajax-Assets-OnComplete').split('; ');
 

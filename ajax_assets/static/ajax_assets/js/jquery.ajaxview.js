@@ -2,7 +2,11 @@
 
     var AjaxView = function() {
         this.defaults = {
-            afterLoad: $.noop,         // Triggered after Ajax content is loaded
+            afterLoad: function(response, status, xhr) {
+                var self = this;
+                // load additional form media
+                $.loadAjaxAssets(xhr);
+            }
         };
         this.container = $('#wizard-container');
     };
