@@ -114,7 +114,7 @@ $(function() {
 
     $('a.wizard').on('click', function(event) {
         event.preventDefault();
-        $.AjaxView.open('/my-ajax-view/');
+        $.AjaxView.open('/my-ajax-view/'); // AjaxView is a singleton class, stored globally on $
     });
 
 });
