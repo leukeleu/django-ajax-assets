@@ -1,6 +1,6 @@
 # Django Ajax Assets
 
-**Be sparing. Control what static assets get laoded for which ajax view.**
+**Be sparing. Control what static assets get loaded for which Ajax view.**
 
 **Authors:** Chi Shang Cheng, Marko Tibold, Ramon de Jezus -- Leukeleu B.V.
 
@@ -11,7 +11,7 @@
 
 * Python
 * Django
-* Modernizer
+* Modernizr
 
 
 ## Installation
@@ -26,17 +26,18 @@ Or clone the project and install it with -e:
     cd django-ajax-assets
     pip install -e .
 
-Add ajax-assets to your `INSTALLED_APPS` setting:
+Add `ajax_assets` to your `INSTALLED_APPS` setting:
 
     INSTALLED_APPS = (
         ...
         'ajax_assets',
+        ...
     )
 
 
 ## Usage
 
-Say you have a view, which will be accesssed via ajax only, and there's some javascsript you'd
+Say you have a view, which will be accesssed via Ajax only, and there's some javascript you'd
 only want to be loaded for that specific view, then you can use the response header to define
 the location of the static file. Django Ajax Assets will then load it for you.
 
@@ -51,7 +52,7 @@ class MyView(AjaxMixin, TemplateView):
 
 ## Example
 
-To run the example you create a virtualenv, install the package and sync the database.
+To run the example create a virtualenv, install the package, and sync the database.
 
     mkvirtualenv ajax-assets-example
     cd django-ajax-assets
