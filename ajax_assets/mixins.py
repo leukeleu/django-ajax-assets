@@ -7,7 +7,7 @@ class AjaxMixin(object):
     """
     Add paths of extra assets to the response-header.
 
-    To add custom CSS and JS to per view, add a Media class to the view class:
+    To add custom CSS and JS per view, add a Media class to the view class:
 
     class MyView(TemplateView):
 
